@@ -1,2 +1,2 @@
-# angular-voting-app
+# Angular-VotingApp
 AngularJS Voting App
