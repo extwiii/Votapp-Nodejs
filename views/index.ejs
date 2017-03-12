@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Voting App</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        body {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="jumbotron text-center">
+            <h1><span class="fa fa-lock"></span>Voting Application</h1>
+
+            <% if(!user) {%>
+
+                <p>Login or Register with:</p>
+
+                <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
+                <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
+                <a href="/auth/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Twitter</a>
+                <a href="/auth/github" class="btn btn-danger"><span class="fa fa-github"></span> Github</a>
+
+                <% }else{ %>
+                    <a href="/profile" class="btn btn-default"><span class="fa fa-user"></span> My Profile</a>
+                    <a href="/logout" class="btn btn-default"><span class="fa fa-sign-out"></span>Logout</a>
+                    <% } %>
+
+                        <h3 class='text-center'>Select a poll to see the results and vote
+              <a href="/newpoll">or make a new poll</a></h3>
+
+                        <ul class='list-group'>
+                            <% for(var i=0; i<polls.length; i++) {%>
+                                <a class='list-group-item text-center' href='/polls/<%= polls[i]._id %>'>
+                                    <%= polls[i].title %>
+                                </a>
+                                <% } %>
+                        </ul>
+        </div>
+
+        <div class="text-center">
+            <p>Design by <a href="http://bctechlondon.co.uk">BC-Tech London</a></p>
+        </div>
+
+    </div>
+</body>
+
+</html>

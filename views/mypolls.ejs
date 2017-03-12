@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Voting App</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        body {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="jumbotron text-center">
+            <h1><span class="fa fa-lock"></span>My Polls</h1>
+            <a href="/" class="btn btn-default btn-sm">Home</a>
+            <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+            <h3 class='text-center'>Select a poll to see the results and vote
+              <a href="/newpoll">or make a new poll</a></h3>
+
+            <ul class='list-group'>
+                <% for(var i=0; i< poll.length; i++) {%>
+                    <a class='list-group-item text-center' href='/polls/<%= poll[i]._id %>'>
+                        <%= poll[i].title %>
+                    </a>
+                    <% } %>
+            </ul>
+        </div>
+
+        <div class="text-center">
+            <p>Design by <a href="http://bctechlondon.co.uk">BC-Tech London</a></p>
+        </div>
+
+    </div>
+</body>
+
+</html>

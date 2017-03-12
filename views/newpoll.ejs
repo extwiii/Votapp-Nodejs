@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Voting App</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        body {
+            padding-top: 80px;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header text-center">
+            <h1><span class="fa fa-anchor"></span> Make a new Poll</h1>
+            <a href="/" class="btn btn-default btn-sm">Home</a>
+            <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        </div>
+
+        <form action="/newpoll" method="post">
+
+            <div class="form-group">
+                <label>Title:</label>
+                <input type="text" class="form-control" name="title">
+            </div>
+            <div class="form-group">
+                <label>Options(seperated by line)</label>
+                <textarea type="text" class="form-control" rows="4" name="options"></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning btn-lg">Create</button>
+        </form>
+
+        <div class="text-center">
+            <p>Design by <a href="http://bctechlondon.co.uk">BC-Tech London</a></p>
+        </div>
+</body>
+
+</html>

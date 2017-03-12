@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Voting App</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js'></script>
+    <style>
+        body {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="jumbotron text-center">
+            <h1><span class="fa fa-lock"></span> Poll</h1>
+            <a href="/" class="btn btn-default btn-sm">Home</a>
+            <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+
+            <div class="row">
+
+                <div class="col-sm-5">
+                    <form action='/polls/<%= poll._id %>' method="post">
+                        <h2> <%= poll.title %></h2>
+                        <% for(var i=0; i< poll.options.length; i++) {%>
+                            <div class="list-group">
+                                <h4 class='list-group-item'>
+                              <input type="radio" name="opt" value='<%= poll.options[i] %>'> <%= poll.options[i].name %></h4>
+                            </div>
+                            <% } %>
+                                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                <a class="btn btn-info btn-block" href="<%='https://twitter.com/intent/tweet?url=' + url + '&text=' + poll.title %>" target="_blank">
+                                      Share on Twitter!</a>
+                                <% if(user && (poll.id == user._id)){%>
+                                    <a href='/polls/<%= poll._id %>/remove' class="btn btn-danger btn-block">Remove this poll</a>
+                                    <% } %>
+                    </form>
+                </div>
+
+                <div class="col-sm-7">
+
+                    <canvas id='pollChart'> </canvas>
+
+
+                    <script>
+                        var opt = document.getElementsByName("opt");
+                        var labels = [],
+                            datas = [],
+                            colors = [];
+                        for (i = 0; i < opt.length; i++) {
+                            if (opt[i].type == "radio") {
+                                var properties = opt[i].value.slice(2, -2).split(', ');
+                                var obj = {};
+                                properties.forEach(function(property) {
+                                    var tup = property.split(': ');
+                                    obj[tup[0]] = tup[1];
+                                });
+                                obj.name = obj.name.slice(1, -1)
+                                labels.push(obj.name)
+                                datas.push(obj.vote)
+                                colors.push("#000000".replace(/0/g, function() {
+                                    return (~~(Math.random() * 16)).toString(16);
+                                }))
+                            }
+                        }
+                        var CHART = document.getElementById("pollChart");
+                        Chart.defaults.scale.ticks.beginAtZero = true;
+                        var myChart = new Chart(CHART, {
+                            type: 'doughnut',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    backgroundColor: colors,
+                                    data: datas,
+                                }]
+                            }
+                        });
+                    </script>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="text-center">
+            <p>Design by <a href="http://bctechlondon.co.uk">BC-Tech London</a></p>
+        </div>
+
+    </div>
+</body>
+
+</html>
