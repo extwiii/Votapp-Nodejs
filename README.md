@@ -10,13 +10,15 @@ Features
 - Node.js 
 - Express
 - Flash notifications
-- MVC Project Structure
+- BDD Project Structure
 - mongoose
+- ejs
 - nodemon
 - morgan
 - Gulp
 - Mocha
 - Bootstrap 3 
+- Chart.js
 
 Prerequisites
 -------------
@@ -96,7 +98,54 @@ credentials.
 - Now copy and paste *Client ID* and *Client Secret* keys into `config/auth.js` file
 - After test your key, you can also set your key as a process.env ([How to set](http://stackoverflow.com/questions/13333221/how-to-change-value-of-process-env-port-in-node-js))
 
-<hr>
+Project Structure
+-----------------
+
+| Name                               | Description                                                  |
+| ---------------------------------- | ------------------------------------------------------------ |
+| **app/models**/poll.js             | Mongoose schema and model for Poll.                          |
+| **app/models**/user.js             | Mongoose schema and model for User.                          |
+| **app**/routes.js                  | Specify application end points/routes                        |
+| **config**/auth.js                 | Set our keys and secrects here                               |
+| **config**/database.js             | Set our database connection here                             |
+| **config**/auth.js                 | Passport Local,twitter and Github strategies                 |
+| **dist**/scripts.js                | Gulp produces minified version of all js files               |
+| **test**/test.user.js              | test with Mocha and Chai                                     |
+| **views**/index.ejs                | Landing page                                                 |
+| **views**/login.ejs                | Login template                                               |
+| **views**/mypolls.ejs              | Listing polls that are created by user                       |
+| **views**/newpoll.ejs              | Create new poll                                              |
+| **views**/polls.ejs                | Voting page with Chart                                       |
+| **views**/profile.ejs              | Profile template                                             |
+| **views**/signup.ejs               | Signup template                                              |
+| .gitignore                         | Set files you would like to ignore                           |
+| gulpfile.js                        | gulp for Automate and enhance your workflow                  |
+| LICENSE                            | Apache License, Version 2.0, January 2004                    |
+| package.json                       | NPM dependencies.                                            |
+| README.md                          | About this repository                                        |
+| server.js                          | The main application file.                                   |
+
+List of Packages
+----------------
+
+| Package                         | Description                                                           |
+| ------------------------------- | --------------------------------------------------------------------- |
+| bcrypt-nodejs                   | Library for hashing and salting user passwords.                       |
+| body-parser                     | Express 4 middleware.                                                 |
+| connect-flash                   | Provides flash messages for Express.                                  |
+| cookies-parser                  | Parse Cookies                                                         |
+| ejs                             | Template engine for Express.                                          |
+| express                         | Node.js web framework.                                                |
+| express-session                 | Express 4 middleware.                                                 |
+| method-override                 | To override the req.method property with a new value                  |
+| mongoose                        | MongoDB ODM.                                                          |
+| morgan                          | Express 4 middleware.                                                 |
+| passport                        | Simple and elegant authentication library for node.js                 |
+| passport-github2                | Sign-in with GitHub plugin.                                           |
+| passport-local                  | Sign-in with Username and Password plugin.                            |
+| passport-twitter                | Sign-in with Twitter plugin.                                          |
+
+
 
 ### Rating :full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::new_moon:
 ### Difficulty :full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::new_moon:
