@@ -1,16 +1,38 @@
 # Votapp - Node.js
-Demo : 
+Demo :  
 
-This repository serves as an example of a basic Node.js application which is using Passport as the authentication middleware for authenticating against a locally configured Mongo backend
-Steps to run the app
+Getting Started
+---------------
 
-    After cloning the repo, install the dependencies by running - npm install
-    To start the server, run -nodemon on the base directory
-    To test the program, run -gulp on the base directory
+The easiest way to get started is to clone the repository:
+
+```bash
+# Get the latest snapshot
+git clone https://github.com/extwiii/Votapp-Node.js.git
+
+# Change directory
+cd myproject
+
+# Install NPM dependencies
+npm install
+
+# Then simply start your app
+node server.js
+
+# Or, if you can use gulp
+gulp
+```
+
+**Note:** I highly recommend installing [Nodemon](https://github.com/remy/nodemon).
+It watches for any changes in your  node.js app and automatically restarts the
+server. Once installed, instead of `node server.js` use `nodemon`. It will
+save you a lot of time in the long run, because you won't need to manually
+restart the server each time you make a small change in code. To install, run
+`sudo npm install -g nodemon`.  
 
 Perquisites
-
-*
+    
+*   
 *
 *
 
