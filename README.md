@@ -2,7 +2,7 @@
 Demo :  
 
 Getting Started
----------------
+-------------
 
 The easiest way to get started is to clone the repository:
 
@@ -11,7 +11,7 @@ The easiest way to get started is to clone the repository:
 git clone https://github.com/extwiii/Votapp-Node.js.git
 
 # Change directory
-cd myproject
+cd Votapp-Nodejs
 
 # Install NPM dependencies
 npm install
@@ -19,7 +19,7 @@ npm install
 # Then simply start your app
 node server.js
 
-# Or, if you can use gulp
+# Or, You can use gulp, it will also run mocha for test
 gulp
 ```
 
@@ -30,11 +30,6 @@ save you a lot of time in the long run, because you won't need to manually
 restart the server each time you make a small change in code. To install, run
 `sudo npm install -g nodemon`.  
 
-Perquisites
-    
-*   
-*
-*
 
 ### Rating :full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::new_moon:
 ### Difficulty :full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::full_moon::new_moon:
