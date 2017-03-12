@@ -1,6 +1,22 @@
 # Votapp - Node.js
 Demo :  
 
+Prerequisites
+-------------
+- [MongoDB](https://www.mongodb.org/downloads)
+- [Node.js](http://nodejs.org)
+- [mLab](https://mlab.com/) Database-as-a-Service
+- [Finding your database connection info](http://docs.mlab.com/connecting/#connect-string)
+- Set value of process.env in ([How to set](http://stackoverflow.com/questions/13333221/how-to-change-value-of-process-env-port-in-node-js))
+  - config/database.js process.env.MONGO_VOTING
+  - config/auth.js
+    - process.env.TWITTER_KEY
+    - process.env.TWITTER_SECRET
+    - process.env.GITHUB_ID
+    - process.env.GITHUB_SECRET
+    
+Now you are done, Ready to go!
+
 Getting Started
 -------------
 
