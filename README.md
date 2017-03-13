@@ -43,8 +43,11 @@ Prerequisites
   - config/auth.js
     - process.env.TWITTER_KEY
     - process.env.TWITTER_SECRET
+    - process.env.TWITTER_URL
     - process.env.GITHUB_ID
     - process.env.GITHUB_SECRET
+    - process.env.GITHUB_URL
+- If you are deploying on Heroku, don't forget to set your config vars ([How to set](https://devcenter.heroku.com/articles/config-vars))
     
 Now you are done, Ready to go!
 
