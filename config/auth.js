@@ -1,7 +1,5 @@
 // config/auth.js
 
-// http://stackoverflow.com/questions/13333221/how-to-change-value-of-process-env-port-in-node-js
-
 // expose our config directly to our application using module.exports
 module.exports = {
 
