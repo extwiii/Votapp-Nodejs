@@ -1,7 +1,5 @@
 # Votapp - Node.js
 
-**Live Demo**: https://extwii-votapp.herokuapp.com/
-
 What can I do with Votapp?
 --------
 
